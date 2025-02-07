@@ -1,0 +1,64 @@
+#title1, #title2 {
+    text-align: center;
+    color: rgb(240, 240, 240);
+    font-size: 40px;
+    font-family: "Comic Sans MS", "Comic Sans"
+}
+
+#title1 {
+    font-size: 40px;
+    margin-bottom: 20px; /* Space between title1 and title2 */
+}
+
+#title2 {
+    font-size: 30px;
+    margin-top: 30px;  /* Optional: space between title1 and title2 */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('waiting.gif') no-repeat center center fixed; /* Set background image */
+    background-size: cover; /* Ensure the background image covers the entire screen */
+    text-align: center;
+    position: relative; /* Position relative for absolute children */
+}
+
+.wrapper {
+    width: 500px;
+    background-color: transparent;
+    border: 2px solid rgba(238, 238, 238, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    padding: 50px; /* Added some padding for better spacing */
+    border-radius: 50px; /* Rounded corners for the wrapper */
+    text-align: center; /* Center all content inside wrapper */
+}
+
+.loader {
+    margin-bottom: 20px; /* Adds space between the loader and the title */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 40px solid #241e1e;
+    border-radius: 50%;
+    border-top: 40px solid #ffebeb;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 1.5s linear infinite; /* Safari */
+    animation: spin 1.5s linear infinite;
+}
+
+/* General spin animation for all browsers */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

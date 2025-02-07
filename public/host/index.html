@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Host | KahootClone</title>
+        <link rel = "stylesheet" href = "../css/host.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper"> 
+        
+        <h2 id = "title">Sumali sa Quizzy gamit itong Pin</h2>
+        <h1 id = "gamePinText"></h1>
+        <div class="wrapper">
+        <h3 id="title">Mga kalahok</h3>   
+        <textarea style="width: 700px; height: 500px;" readonly id="players">Mga kalahok</textarea>
+        </div>
+        
+        <div id="button-container">
+            <button id = "cancel" onclick = "endGame()">IKANSELA</button>
+            <button id = 'start' onclick = "startGame()">UMPISAHAN</button>
+            
+        </div>
+        
+        <br>
+        
+        
+        <br>
+        <script src = "../socket.io/socket.io.js"></script>
+        <script src = "../js/libs/jqueryLibrary.js"></script>
+        <script src = "../js/libs//deparam.js"></script>
+        <script src = "../js/host.js"></script>
+        </div>
+
+        
+    </body>
+</html>
+

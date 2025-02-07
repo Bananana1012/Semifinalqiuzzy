@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent the scroll bar */
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('hostGameView.gif') no-repeat; /* Set background image */
+    height: 100%;
+    background-position: fill;
+    background-size: cover; /* Ensure the background image covers the entire screen */
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+#answer1, #answer2, #answer3, #answer4 {
+    background: linear-gradient(to right, #4CAF50, #2e8b57); /* Gradient background */
+    margin: auto;
+    padding: 30px 20px;
+    height: 50%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    border-radius: 10px; /* Make the corners slightly rounded */
+    border: 6px solid transparent; /* Use transparent border to highlight the gradient */
+}
+
+#answer1 {
+    background: linear-gradient(to right, #4CAF50, #2e8b57); /* Green gradient */
+}
+#answer2 {
+    background: linear-gradient(to right, #f94a1e, #e64a19); /* Orange gradient */
+}
+#answer3 {
+    background: linear-gradient(to right, #3399ff, #1e88e5); /* Blue gradient */
+}
+#answer4 {
+    background: linear-gradient(to right, #ff9933, #ff5722); /* Yellow-Orange gradient */
+}
+
+.square {
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 70px;
+    height: 0px;
+    font-size: 20px;
+}
+
+#square1 {
+    background-color: #4CAF50;
+}
+#square2 {
+    background-color: #f94a1e;
+}
+#square3 {
+    background-color: #3399ff;
+}
+#square4 {
+    background-color: #ff9933;
+}
+
+#nextQButton {
+    display: none;
+    color: white;
+    background-color: #3bda82;
+    border: none;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+#nextQButton:hover {
+    cursor: pointer;
+    background-color: #076838;
+}
+#question {
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(255, 255, 255, 0.5); /* Translucent background */
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#timerText {
+    font-family: 'Raleway', sans-serif;
+    font-size: 60px; /* Increase the timer size */
+    text-align: center;
+}
+
+#num {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 35px;
+}
+#playersAnswered {
+    font-family: 'Tajawal', sans-serif;
+}
+#questionNum {
+    font-family: 'Tajawal', sans-serif;
+}
+
+#winner1, #winner2, #winner3, #winner4, #winner5 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    display: none;
+}
+
+#winnerTitle {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    color: #3399ff;
+    display: none;
+}

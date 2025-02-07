@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent the scroll bar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('host.gif') no-repeat; /* Set background image */
+    height: 100%;
+    background-position: fill;
+    background-size: cover; /* Ensure the background image covers the entire screen */
+    text-align: center;
+    position: relative; /* Position relative for absolute children */
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+#title {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+#gamePinText {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+/* Styling for the participants container */
+#players-container {
+    display: flex;
+    flex-direction: column; /* Stack names vertically */
+    justify-content: flex-start; /* Align at the top */
+    align-items: center;
+    overflow-y: auto; /* Add scroll if too many participants */
+    height: 400px; /* Fixed height */
+    width: 700px;
+    background: rgba(233, 232, 232, 0.3); /* Transparent background with slight white tint */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 18px;
+    font-family: "Comic Sans MS", "Comic Sans";
+    color: white;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#players-container h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* For the list of players (individual names) */
+#players {
+    display: flex;
+    flex-wrap: wrap; /* Allow names to wrap into new lines */
+    justify-content: center;
+    gap: 10px; /* Space between names */
+    margin: 0; /* Remove margin */
+    padding: 0;
+}
+
+#players span {
+    background-color: rgba(255, 255, 255, 0.4); /* Light background with translucency */
+    border-radius: 50%; /* Make it circular */
+    padding: 20px 40px; /* Add padding to make the circle large enough to fit the name */
+    font-size: 25px; /* Initial larger font size */
+    transition: font-size 0.3s ease; /* Smooth transition for font size change */
+    text-align: center; /* Center the name inside the circle */
+    display: inline-block; /* Make the span inline-block to maintain circle shape */
+}
+
+/* Resize text when there are many participants */
+#players span.smaller {
+    font-size: 18px; /* Shrink text when there are 10 or more players */
+}
+
+/* Styling for the buttons and other elements remains unchanged */
+#button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Optional: add spacing at the top */
+}
+
+#start {
+    background-color: #31d877;
+    border: none;
+    color: white;
+    padding: 15px 100px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+#cancel {
+    background-color: #f0101b;
+    border: none;
+    color: white;
+    padding: 15px 100px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    background: rgba(233, 232, 232, 0.3);  /* Transparent background with a slight white tint */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 18px;
+    resize: none;
+    font-family: "Comic Sans MS", "Comic Sans";
+    overflow: auto;
+    backdrop-filter: blur(8px);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: rgba(180, 175, 175, 0.8);
+}

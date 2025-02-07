@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent the scroll bar */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('create.gif') no-repeat; /* Set background image */
+    background-position: center;
+    background-size: cover; /* Ensure the background image covers the entire screen */
+    text-align: center;
+    position: relative; /* Position relative for absolute children */
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+body {
+    -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+#title {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#subtitle {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #e5f31f;
+    border-radius: 30px;
+    font-size: 18px;
+    margin: 10px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+#link:hover {
+    background-color: #bd971c;
+    cursor: pointer;
+}
+
+#game-list {
+    text-align: center;
+}
+
+#back {
+    position: absolute; /* Position it at the top left */
+    top: 20px;
+    left: 20px;
+    color: white;
+    background-color: #e43b2f;
+    border: none;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+#back:hover {
+    cursor: pointer;
+    background-color: #8f0b58;
+
+}
+#gameButton {
+    font-size: 50px;
+    color: white;
+    background-color: #2fabe4;
+    border: none;
+    padding: 15px 40px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+     
+    
+}
+
+#gameButton:hover {
+    cursor: pointer;
+    background-color: #071192;
+}
