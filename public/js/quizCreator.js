@@ -4,6 +4,8 @@ var questionNum = 1; // Starts at two because question 1 is already present
 function updateDatabase(){
     var questions = [];
     var name = document.getElementById('name').value;
+    
+    // Loop through each question and collect data
     for(var i = 1; i <= questionNum; i++){
         var question = document.getElementById('q' + i).value;
         var answer1 = document.getElementById(i + 'a1').value;
@@ -12,49 +14,51 @@ function updateDatabase(){
         var answer4 = document.getElementById(i + 'a4').value;
         var correct = document.getElementById('correct' + i).value;
         var answers = [answer1, answer2, answer3, answer4];
-        questions.push({"question": question, "answers": answers, "correct": correct})
+        questions.push({"question": question, "answers": answers, "correct": correct});
     }
-    
+
     var quiz = {id: 0, "name": name, "questions": questions};
+    
+    // Emit event with quiz data to the server
     socket.emit('newQuiz', quiz);
 }
 
 function addQuestion(){
     questionNum += 1;
-    
+
     var questionsDiv = document.getElementById('allQuestions');
-    
+
     var newQuestionDiv = document.createElement("div");
-    
+
     var questionLabel = document.createElement('label');
     var questionField = document.createElement('input');
-    
+
     var answer1Label = document.createElement('label');
     var answer1Field = document.createElement('input');
-    
+
     var answer2Label = document.createElement('label');
     var answer2Field = document.createElement('input');
-    
+
     var answer3Label = document.createElement('label');
     var answer3Field = document.createElement('input');
-    
+
     var answer4Label = document.createElement('label');
     var answer4Field = document.createElement('input');
-    
+
     var correctLabel = document.createElement('label');
     var correctField = document.createElement('input');
-    
+
     questionLabel.innerHTML = "Question " + String(questionNum) + ": ";
     questionField.setAttribute('class', 'question');
     questionField.setAttribute('id', 'q' + String(questionNum));
     questionField.setAttribute('type', 'text');
-    
+
     answer1Label.innerHTML = "Answer 1: ";
     answer2Label.innerHTML = " Answer 2: ";
     answer3Label.innerHTML = "Answer 3: ";
     answer4Label.innerHTML = " Answer 4: ";
     correctLabel.innerHTML = "Correct Answer (1-4): ";
-    
+
     answer1Field.setAttribute('id', String(questionNum) + "a1");
     answer1Field.setAttribute('type', 'text');
     answer2Field.setAttribute('id', String(questionNum) + "a2");
@@ -65,9 +69,9 @@ function addQuestion(){
     answer4Field.setAttribute('type', 'text');
     correctField.setAttribute('id', 'correct' + String(questionNum));
     correctField.setAttribute('type', 'number');
-    
+
     newQuestionDiv.setAttribute('id', 'question-field'); //Sets class of div
-    
+
     newQuestionDiv.appendChild(questionLabel);
     newQuestionDiv.appendChild(questionField);
     newQuestionDiv.appendChild(document.createElement('br'));
@@ -86,9 +90,9 @@ function addQuestion(){
     newQuestionDiv.appendChild(document.createElement('br'));
     newQuestionDiv.appendChild(correctLabel);
     newQuestionDiv.appendChild(correctField);
-    
+
     questionsDiv.appendChild(newQuestionDiv); // Adds the question div to the screen
-    
+
     newQuestionDiv.style.backgroundColor = randomColor();
 }
 
@@ -113,3 +117,12 @@ function setBGColor(){
     var randColor = randomColor();
     document.getElementById('question-field').style.backgroundColor = randColor;
 }
+
+// Listen for quiz created response
+socket.on('quizCreated', function(response){
+    alert(response.message); // Show success message when the quiz is created
+});
+
+socket.on('quizError', function(response){
+    alert(response.message); // Show error message if something goes wrong
+});
